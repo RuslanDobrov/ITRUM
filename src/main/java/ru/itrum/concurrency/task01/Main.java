@@ -8,8 +8,8 @@ public class Main {
             for (int i = 0; i < 10; i++) {
                 try {
                     blockingQueue.enqueue(i);
-                    System.out.println("Задача добавлена " + i);
-                    System.out.println("Размер очереди добавления " + blockingQueue.size());
+                    System.out.println("Task add " + i);
+                    System.out.println("Size add " + blockingQueue.size());
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
@@ -20,10 +20,10 @@ public class Main {
         Thread threadConsume = new Thread(() -> {
             for (int i = 0; i < 10; i++) {
                 try {
-                    System.out.println("Размер очереди выполнения " + blockingQueue.size());
+                    System.out.println("Size end " + blockingQueue.size());
                     blockingQueue.dequeue();
                     Thread.sleep(1000);
-                    System.out.println("Задача выполнена " + i);
+                    System.out.println("Task end " + i);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
