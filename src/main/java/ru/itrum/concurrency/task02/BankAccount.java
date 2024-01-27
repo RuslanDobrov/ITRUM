@@ -1,7 +1,7 @@
 package ru.itrum.concurrency.task02;
 
 public class BankAccount {
-    private static double balance;
+    private double balance;
 
     public synchronized void deposit(double amount) {
         balance += amount;
@@ -15,7 +15,7 @@ public class BankAccount {
         }
     }
 
-    public double getBalance() {
+    public synchronized double getBalance() {
         return balance;
     }
 }
