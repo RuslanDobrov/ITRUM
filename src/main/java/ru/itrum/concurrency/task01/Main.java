@@ -9,7 +9,7 @@ public class Main {
                 try {
                     blockingQueue.enqueue(i);
                     System.out.println("Task add " + i);
-                    System.out.println("Size add " + blockingQueue.size());
+//                    System.out.println("Size add " + blockingQueue.size());
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
@@ -20,7 +20,7 @@ public class Main {
         Thread threadConsume = new Thread(() -> {
             for (int i = 0; i < 10; i++) {
                 try {
-                    System.out.println("Size end " + blockingQueue.size());
+//                    System.out.println("Size end " + blockingQueue.size());
                     blockingQueue.dequeue();
                     Thread.sleep(1000);
                     System.out.println("Task end " + i);
