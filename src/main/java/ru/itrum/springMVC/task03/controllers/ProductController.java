@@ -51,7 +51,7 @@ public class ProductController {
 
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
         }
-        Product createdProduct = productService.createProduct(product);
+        Product createdProduct = productService.save(product);
         return new ResponseEntity<>(createdProduct, HttpStatus.CREATED);
     }
 

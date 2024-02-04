@@ -25,10 +25,6 @@ public class ProductService {
         return productRepository.findById(productId);
     }
 
-    public Product createProduct(Product product) {
-        return productRepository.save(product);
-    }
-
     public Product save(Product product) {
         return productRepository.save(product);
     }
