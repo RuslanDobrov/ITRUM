@@ -5,7 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
-import java.util.Date;
+
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -17,9 +18,10 @@ public class Book {
     private Long id;
     private String title;
     private String author;
-    private Date publicationYear;
+    private LocalDate publicationYear;
 
-    public Book(String title, String author, Date publicationYear) {
+    public Book(Long id, String title, String author, LocalDate publicationYear) {
+        this.id = id;
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
